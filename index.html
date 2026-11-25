@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Waktu — Kendalikan Waktumu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">⏳ KalkulatorWaktu</a>
+            <ul class="nav-links">
+                <li><a href="#kalkulator">Kalkulator</a></li>
+                <li><a href="#fokus">Timer Fokus</a></li>
+                <li><a href="#tantangan">Tantangan Offline</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Landing Page / Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <span class="badge">Digital Wellbeing & Produktivitas</span>
+            <h1>Berapa Banyak Waktu Hidupmu yang Habis di Layar?</h1>
+            <p>Ukur dampak kebiasaan scrolling harianmu, temukan potensi yang terlewatkan dalam setahun, dan mulai kebiasaan fokus tanpa distraksi hari ini.</p>
+            <div class="hero-buttons">
+                <a href="#kalkulator" class="btn btn-primary">Hitung Waktumu Sekarang</a>
+                <a href="#fokus" class="btn btn-secondary">Mulai Fokus Belajar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Fitur 1: Kalkulator Waktu Media Sosial -->
+        <section id="kalkulator" class="card section-spacing">
+            <div class="section-header">
+                <h2>📱 Kalkulator Waktu Media Sosial</h2>
+                <p>Masukkan rata-rata durasi kamu bermain media sosial dalam sehari.</p>
+            </div>
+            
+            <div class="calc-box">
+                <div class="input-group">
+                    <label for="hoursInput">Jam per hari:</label>
+                    <input type="number" id="hoursInput" min="0" max="24" step="0.5" placeholder="Contoh: 3.5">
+                    <button id="calculateBtn" class="btn btn-primary">Hitung Dampak</button>
+                </div>
+
+                <div id="resultBox" class="result-grid hidden">
+                    <div class="result-item">
+                        <span class="result-number" id="yearlyHours">0</span>
+                        <span class="result-label">Jam terbuang / tahun</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number" id="yearlyDays">0</span>
+                        <span class="result-label">Hari penuh (24 jam) / tahun</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number" id="booksCount">0</span>
+                        <span class="result-label">Buku yang bisa selesai dibaca*</span>
+                    </div>
+                </div>
+                <p class="footnote">*Asumsi rata-rata 1 buku membutuhkan waktu baca sekitar 6 jam.</p>
+            </div>
+        </section>
+
+        <!-- Fitur 2: Timer Fokus & Tantangan Offline -->
+        <div class="two-columns section-spacing">
+            <!-- Pengatur Waktu Fokus -->
+            <section id="fokus" class="card">
+                <div class="section-header">
+                    <h2>⏱️ Pengatur Waktu Fokus</h2>
+                    <p>Gunakan teknik Pomodoro untuk belajar tanpa menyentuh ponsel.</p>
+                </div>
+
+                <div class="timer-container">
+                    <div class="mode-buttons">
+                        <button class="mode-btn active" data-time="25">Fokus (25m)</button>
+                        <button class="mode-btn" data-time="5">Istirahat (5m)</button>
+                        <button class="mode-btn" data-time="45">Deep Work (45m)</button>
+                    </div>
+
+                    <div class="timer-display" id="timerDisplay">25:00</div>
+
+                    <div class="timer-controls">
+                        <button id="startTimerBtn" class="btn btn-primary">Mulai</button>
+                        <button id="pauseTimerBtn" class="btn btn-secondary">Jeda</button>
+                        <button id="resetTimerBtn" class="btn btn-outline">Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Daftar Tantangan Harian Tanpa Gawai -->
+            <section id="tantangan" class="card">
+                <div class="section-header">
+                    <h2>🌿 Tantangan Harian Tanpa Gawai</h2>
+                    <p>Selesaikan misi offline hari ini untuk menyegarkan pikiranmu.</p>
+                </div>
+
+                <ul class="challenge-list" id="challengeList">
+                    <li>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="challenge-check">
+                            <span class="checkmark"></span>
+                            <span class="challenge-text">Baca buku fisik minimal 15 halaman</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="challenge-check">
+                            <span class="checkmark"></span>
+                            <span class="challenge-text">Jalan kaki sore 20 menit tanpa membawa HP</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="challenge-check">
+                            <span class="checkmark"></span>
+                            <span class="challenge-text">Makan tanpa menonton video atau cek notifikasi</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="challenge-check">
+                            <span class="checkmark"></span>
+                            <span class="challenge-text">Tulis catatan/jurnal harian di atas kertas</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="challenge-check">
+                            <span class="checkmark"></span>
+                            <span class="challenge-text">Matikan layar 1 jam sebelum tidur</span>
+                        </label>
+                    </li>
+                </ul>
+
+                <div class="progress-wrapper">
+                    <div class="progress-info">
+                        <span>Progres Hari Ini</span>
+                        <span id="progressText">0/5 Selesai</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Kalkulator Waktu. Dibuat untuk membantu generasi muda lebih bijak mengelola waktu.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
